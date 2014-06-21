@@ -1,0 +1,24 @@
+<div class="row">
+  <h1>Shop JG </h1>
+  <p class="lead">JG uses the finest fabrics from around the world to give you one-of-a-kind gifts.</p>
+</div>
+<div class="center">
+  <div class="row">
+    <% @listings.each do |listing| %>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <%= image_tag listing.image.url %>
+        <div class="caption">
+          <h3><%= link_to listing.name, listing %></h3>
+          <h4><%= number_to_currency(listing.price) %></h4>
+          <%= link_to 'show', listing, class: "btn btn-link" %>
+          <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
+          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
