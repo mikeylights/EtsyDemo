@@ -1,7 +1,60 @@
-<div class="row">
-  <h1>Shop JG </h1>
-  <p class="lead">JG uses the finest fabrics from around the world to give you one-of-a-kind gifts.</p>
+  <!-- Nav-->
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Joseph Giusseppee</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About", pages_about_path %></li>
+        <li><%= link_to "Contact", pages_contact_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li><%= link_to "Dashboard", seller_path %></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path %> </li>
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %> </li>
+        <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %> </li>
+        <li><%= link_to "Log In", new_user_session_path %> </li>
+        <% end %>
+        
+
+        
+        <!--put links here if u want em pulled right-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- end nav-->
+
+<div class="container">
+   <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= name.to_s == 'notice' ? "success" : "danger" %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
+
+<div class="jumbotron">
+  <h1>Handcrafted <br>Lapel Flowers. </h1>
+  <h2>Discover the world of<br>Joseph Giusseppee.</h2>
+</div>
+
+<div class="container">
+
 <div class="center">
   <div class="row">
     <% @listings.each do |listing| %>
@@ -22,3 +75,4 @@
 <% if user_signed_in? %>
 <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
 <% end %>
+</div>

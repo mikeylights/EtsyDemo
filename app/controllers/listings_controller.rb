@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
+    @disable_nav = true
     @listings = Listing.all.order("created_at DESC")
   end
 
