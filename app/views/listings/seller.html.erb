@@ -1,6 +1,6 @@
 <div class="row">
-  <h1>Shop JG </h1>
-  <p class="lead">JG uses the finest fabrics from around the world to give you one-of-a-kind gifts.</p>
+  <h1>My Dashboard</h1>
+  <p class="lead">Manage your products here.</p>
 </div>
 <div class="center">
   <div class="row">
@@ -12,6 +12,10 @@
           <h3><%= link_to listing.name, listing %></h3>
           <h4><%= number_to_currency(listing.price) %></h4>
           <p><%= "Sold by #{listing.user.name}" %></p>
+          <% if (user_signed_in?) && (current_user == listing.user) %>
+            <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
+            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+          <% end %>
         </div>
       </div>
     </div>
