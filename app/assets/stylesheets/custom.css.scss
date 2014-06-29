@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 body{
 	background-color: #F5F5F1;
@@ -14,16 +15,16 @@ body{
 	padding-bottom: 15px;
 }
 .navbar-default .navbar-brand {
-	font-family: 'Montserrat', Helvetica;
+	font-family: 'Pacifico', Helvetica;
 	font-weight: 400;
-	color: #A2548E;
+	color: #000;
 	font-size: 24px;
 }
 .navbar-default .navbar-nav > li > a{
 	font-family: 'Montserrat', Helvetica;
 	font-size: 14px;
-	font-weight: 500;
-	color: #019285;
+	font-weight: 400;
+	color: #000;
 }
 .center{
 	text-align: center;
@@ -51,8 +52,12 @@ p#price{
 	font-weight: bold;	
 	font-size: 18px;
 }
+h1#shop{
+	font-family: 'Pacifico', Helvetica;
+	color: #C71585;
+}
 .jumbotron{
-	background-image: url('jumbotron.jpg');
+	background-image: url('https://dl.dropboxusercontent.com/s/nn7tavf3dknwspr/jumbotron.jpg?n=41374917');
 	background-size: right;
 	font-family: 'Montserrat';
 	h1, h2 {
