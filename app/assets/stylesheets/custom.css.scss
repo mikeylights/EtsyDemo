@@ -29,10 +29,16 @@ body{
 .center{
 	text-align: center;
 }
+a:hover {
+color: #fff;
+}
 .thumbnail a {
 	text-decoration: none;
 	color: #000;
 	font-weight: 500;
+}
+a.btn.btn-success{
+	color: #fff !important;
 }
 .thumbnail h4 {
 	color: #78c042;
